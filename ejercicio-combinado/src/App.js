@@ -1,7 +1,7 @@
 import './App.css';
 import Logo from './assets/logo.png';
 import './style/task.css'
-import Task from './components/task';
+import TaskForm from './components/task-form'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       </div>
       <div className='principal-list-task'>
         <h1>To Do list</h1>
-        <Task/>
+        <TaskForm/>
       </div>
     </div>
   );
