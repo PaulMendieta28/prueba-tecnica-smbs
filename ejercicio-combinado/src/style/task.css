@@ -1,0 +1,33 @@
+.task-container {
+  align-items: center;
+  background-color: #07575b;
+  border: 1px solid white;
+  border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  min-height: 65px;
+  padding: 8px 15px 8px 20px;
+  width: 500px;
+}
+
+.task-title {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  height: 100%;
+  overflow-wrap: anywhere;
+  width: 100%;
+}
+
+.task-icon {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+}
+
+.task-container.complete {
+  background-color: #5a01a7;
+  text-decoration: line-through;
+}
