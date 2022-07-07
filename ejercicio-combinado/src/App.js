@@ -4,6 +4,7 @@ import './style/task.css'
 import TaskList from './components/task-list'
 
 function App() {
+
   return (
     <div className="task-app">
       <div className='logo-container'>

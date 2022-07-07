@@ -17,8 +17,10 @@ const TaskForm = ({ onSubmit }) => {
       complete: false,
     };
 
-    if(typeof onSubmit === "function")
+    if(typeof onSubmit === "function"){
       onSubmit(newTask);
+      setTitle("");
+    }
   };
 
   return (

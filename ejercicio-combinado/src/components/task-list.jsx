@@ -1,24 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TaskForm from './task-form';
 import Task from './task'
 import '../style/task-list.css';
 
 function ListTask() {
   const [tasks, setTasks] = useState([]);
-  console.log('tasks', tasks)
 
+  useEffect(() => {
+    const storagedList = JSON.parse(localStorage.getItem('tasks'))
+    setTasks(storagedList)
+  }, [])
+
+  const saveTask = updatedTasks =>{
+    localStorage.setItem('tasks',JSON.stringify(updatedTasks))
+    setTasks(updatedTasks);
+  }
+  
   const addTask = task => {
-    console.log(task);
     if(task?.text){
       const updatedTasks = [task, ...tasks];
 
-      setTasks(updatedTasks);
+      saveTask(updatedTasks);
     }
   };
 
   const deleteTask = id => {
     const updatedTasks = tasks.filter(task => task.id !== id);
-    setTasks(updatedTasks);
+    saveTask(updatedTasks);
   };
 
   const completeTask = id => {
@@ -28,7 +36,7 @@ function ListTask() {
 
     updatedTasks[index] = { ...modifiedTask, complete: !modifiedTask.complete }
 
-    setTasks(updatedTasks);
+    saveTask(updatedTasks);
   }
 
   return (
