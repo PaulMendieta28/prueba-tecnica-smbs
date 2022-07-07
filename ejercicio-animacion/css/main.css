@@ -82,54 +82,42 @@ body {
 .view:hover img{
    transition: all 300ms ease-out;
    will-change: transform;
-}
-
-.view:hover > img {
    transform: scale(1.3);
+   animation-duration: 3s;
+   animation-name: fadeInB;
+}
+@keyframes fadeInB {
+   0%{opacity: 0;}
+   100%{opacity: 0.5;}
 }
 
- .view:hover h2 {
+.view:hover h2 {
   animation-name: slide-bottom;
   animation-duration: 2s;
 }
 
 @keyframes slide-bottom {
-
-  from {
-    margin-bottom: 200px;
-  }
-
-  50% {
-    margin-bottom: 110px;
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.9;
-  }
-
-  to {
-    margin-bottom: 0px;
-  }
-
+   0%{bottom: 200px;}
+   100%{bottom: 0%;}
 }
 
-
-
-
- /* a {
-   animation-duration: 3s;
-   animation-name: slidein;
+.view:hover p {
+   animation-name: slide-top;
+   animation-duration: 2s;
  }
  
- @keyframes slidein {
-   from {
-     margin-left: 100%;
-     width: 300%
-   }
+ @keyframes slide-top {
+    0%{top: 200px;}
+    100%{top: 0%;}
+ }
+
+ .view:hover a {
+   animation-name: fadeIn;
+   animation-duration: 4s;
+ }
  
-   to {
-     margin-left: 0%;
-     width: 100%;
-   }
- }  */
+ @keyframes fadeIn {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+ }
+ 
